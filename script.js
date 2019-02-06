@@ -2,41 +2,48 @@
 // need to have an array with 5 questions and 5 answers
 // need to have same 5 questions with wrong answers
 // question 1 = correct answer wrong answer 
-let question1 = [
-    correct1 = "",
-    wrong1 = ""
-]
+// let questions =["","","","",""];
+
+// let question1 = [
+//     correct1 = "text",
+//     wrong1 = "text"
+// ]
+// const gameSetup = function(evt) {
+    //puts question in the question box
+    //puts two answers in the option boxes
+// }
+
 // question 2 = correct answer wrong answer 
-let question2 = [
-    correct2 = "",
-    wrong2 = ""
-]
+// let question2 = [
+//     correct2 = "text2",
+//     wrong2 = "text2"
+// ]
 // question 3 = correct answer wrong answer 
-let question3 = [
-    correct3 = "",
-    wrong3 = ""
-]
+// let question3 = [
+//     correct3 = "text3",
+//     wrong3 = "text3"
+// ]
 // question 4 = correct answer wrong answer 
-let question4 = [
-    correct4 = "",
-    wrong4 = ""
-]
+// let question4 = [
+//     correct4 = "text4",
+//     wrong4 = "text4"
+// ]
 // question 5 = correct answer wrong answer 
-let question5 = [
-    correct5 = "",
-    wrong5 = ""
-]
+//let question5 = [
+    // correct5 = "text5",
+    // wrong5 = "text5"
+//]
 
 // what needs to happen 
 // page loads 
 // has one question and 2 potential answers 
-let playerScore = document.querySelector('.Score');
-let currentScore = 000;
+//let playerScore = document.querySelector('.Score');
+//let currentScore = 000;
 
-const gameSetup = function(evt) {
+//const gameSetup = function(evt) {
     //puts question in the question box
     //puts two answers in the option boxes
-}
+//}
 
 
 
@@ -56,3 +63,32 @@ const gameSetup = function(evt) {
 // game 5
 //could i potentially have these load with the different info 
 
+const question = document.querySelector('.question');
+const answer1 = document.querySelector('.option1');
+const answer2 = document.querySelector('.option2');
+
+// answer_op_1.innerText= "sup skank";
+// answer_op_2.innerText ="it is dark in hur";
+// question.innerText = "here is ze question";
+
+questionArray = [];
+
+class questionSetup {
+    constructor(question,ans1,ans2) {
+        this.question = question;
+        this.ans1 = ans1;
+        this.ans2 = ans2;
+    
+    }
+}
+
+question0 = ("Yes or no?","Yes","No")
+
+questionArray.push(question0);
+console.log(question0);
+
+//OR
+
+// var GetMyQuestion = questionArray[0];
+// var litString = GetMyQuestion.ans1;
+// console.log(litString);
