@@ -1,52 +1,63 @@
 const nextQuestion = document.querySelector('.nextQ');
-nextQuestion.addEventListener("click",next);
-function next(e) {
-    e.currentTarget.
-}
-
-
 const question = document.querySelector('.question');
 const answer_1 = document.querySelector('.option1');
 const answer_2 = document.querySelector('.option2');
 let playerScore = document.querySelector('.Score');
 let currentScore = 000;
-// ans1.innerText= "sup skank";
-// ans2.innerText ="it is dark in hur";
-// question.innerText = "here is ze question";
+
+var questionArray = [
+    {
+        question: "Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",
+        choices: ["Caligula","Nero"],
+        answer: 0
+    },
+    {
+        question:"Is the sky blue",
+        choices: ["Yes","No"],
+        answer:0
+    },
+];
+
+for (let i = 0; i < questionArray.length; i++) {
+    const question = questionArray[i].question;
+    
+    
+}
 
 
 
 
-questionArray = [];
+
 
 class Questions {
-    constructor(question,answer1,answer2) {
-        this.question = question;
-        this.answer1 = answer1;
-        this.answer2 = answer2;
+    constructor(q,a1,a2) {
+        this.q = q;
+        this.a1 = a1;
+        this.a2 = a2;
     }
 }
 
+
 //QUESTIONS//
     //QUESTION 0//
-let question0 = new Questions("Yes or no?","Yes","No"); 
-questionArray.push(question0);
-console.log(question0.answer1);
+// let question0 = new Questions("","",""); 
+// questionArray.push(question0);
+// console.log(question0.a1);
 
-question.innerText = question0.question;
-answer_1.innerText = question0.answer1;
-answer_2.innerText = question0.answer2;
+// question.innerText = question0.q;
+// answer_1.innerText = question0.a1;
+// answer_2.innerText = question0.a2;
 
     //QUESTION 1//
-let question1 = new Questions("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?" 
-,"Caligula","Nero");
+// let question1 = new Questions("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?" 
+// ,"Caligula","Nero");
 
-questionArray.push(question1);
-console.log(question1.answer1);
+// questionArray.push(question1);
+// console.log(question1.answer1);
 
-question.innerText = question1.question;
-answer_1.innerText = question1.answer1;
-answer_2.innerText = question1.answer2;
+// question.innerText = question1.q;
+// answer_1.innerText = question1.a1;
+// answer_2.innerText = question1.a2;
 
 
 
@@ -73,22 +84,4 @@ answer_2.innerText = question1.answer2;
   }
 
 
-
-
-// one option is correct 
-
-// when click on the correct answer turn the box green alert that you are correct 
-// score goes up 100 points 
-// loads next question
-// when the wrong answer is clicked turn the box red alert that you were wrong
-// score stays the same 
-// shake next question button ??
-
-// button reloads page with new question and answers
-// game 1
-// game 2 
-// game 3
-// game 4
-// game 5
-//could i potentially have these load with the different info 
 
