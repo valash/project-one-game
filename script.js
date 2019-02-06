@@ -1,42 +1,127 @@
-const nextQuestion = document.querySelector('.nextQ');
-const question = document.querySelector('.question');
-const answer_1 = document.querySelector('.option1');
-const answer_2 = document.querySelector('.option2');
+//...............variables.................
+const nextQuestionButton = document.querySelector('.nextQ');
+const questions = document.querySelector('.questions');
+const option_1 = document.querySelector('.option1');
+const option_2 = document.querySelector('.option2');
 let playerScore = document.querySelector('.Score');
 let currentScore = 000;
 
+// class Questions {
+//     constructor(question,choices,correctAnswer,wrongAnswer) {
+//         this.question = question;
+//         this.choices = choices;
+//         this.correctAnswer = correctAnswer;
+//         this.wrongAnswer = wrongAnswer;
+//     }
+// }
+
+//..............questions array .......
 var questionArray = [
     {
         question: "Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",
         choices: ["Caligula","Nero"],
-        answer: 0
+        correctAnswer: 0,
+        wrongAnswer: 1
     },
     {
         question:"Is the sky blue",
         choices: ["Yes","No"],
-        answer:0
+        correctAnswer: 0,
+        wrongAnswer: 1
+    },
+    {
+        question:"whaz my name",
+        choices: ["Tony","VA"],
+        correctAnswer: 1,
+        wrongAnswer: 0
+    },
+    {
+        question:"where am i from",
+        choices: ["va","texas"],
+        correctAnswer: 0,
+        wrongAnswer: 1
+    },
+    {
+        question:"do i have a brother?",
+        choices: ["no","yes"],
+        correctAnswer: 1,
+        wrongAnswer: 0
     },
 ];
+let question0 = questionArray[0];
+    questions.innerText = questionArray[0].question;
+    option_1.innerText = questionArray[0].choices[0];
+    option_2.innerText = questionArray[0].choices[1];
+console.log(question0);
 
-for (let i = 0; i < questionArray.length; i++) {
-    const question = questionArray[i].question;
-    
-    
-}
+let question1 = questionArray[1];
+    questions.innerText = questionArray[1].question;
+    option_1.innerText = questionArray[1].choices[0];
+    option_2.innerText = questionArray[1].choices[1];
+console.log(question1);
+
+let question2 = questionArray[2];
+    questions.innerText = questionArray[2].question;
+    option_1.innerText = questionArray[2].choices[0];
+    option_2.innerText = questionArray[2].choices[1];
+console.log(question2);
+
+let question2 = questionArray[3];
+    questions.innerText = questionArray[3].question;
+    option_1.innerText = questionArray[3].choices[0];
+    option_2.innerText = questionArray[3].choices[1];
+console.log(question3);
+
+//.............functions.............
+//https://stackoverflow.com/questions/40606697/how-do-i-loop-back-to-the-prompt-if-answer-is-incorrect-javascript
+// guess();
+// function guess() {
+//     if (questionArray = questionArray[0].question);
+//     if (answer === questionArray[0].correctAnswer) {
+//         e.currentTarget.style.backgroundColor = "green";
+//         currentScore += 100;
+//         console.log(currentScore)
+//         console.log(playerScore)
+//         playerScore.innerText = currentScore;
+//         alert("correct bish");
+//     }else{
+//     alert("incorrect bish");
+//     }
+// }
+
+//   function guess(e){
+//     if (guessIsCorrect) {
+//     e.currentTarget.style.backgroundColor = "green";
+//     currentScore += 100;
+//     console.log(currentScore)
+//     console.log(playerScore)
+//     playerScore.innerText = currentScore;
+//     window.alert("You've made the Gods proud!");
+//    } else { (guessIsWrong) {
+//     e.currentTarget.style.backgroundColor = "red";
+//     window.alert("You've failed the Gods");
+//    }
+//   }
+  
+//  function nextQuestion(){
+//     nextQ.addEventListener('click',function(load) {
+//         console.log("this loaded");
+//     })
+//  }
 
 
 
 
 
+  //.............. events.............
+// https://codepen.io/jkohlin/pen/MQPBYJ?editors=0010 - help referenced 
 
-class Questions {
-    constructor(q,a1,a2) {
-        this.q = q;
-        this.a1 = a1;
-        this.a2 = a2;
-    }
-}
 
+// window.addEventListener('load', function() {
+//     questions.innerText = questionArray[0].question;
+//     option_1.innerText = questionArray[0].choices[0];
+//     option_2.innerText = questionArray[0].choices[1];
+// });
 
 //QUESTIONS//
     //QUESTION 0//
@@ -47,41 +132,4 @@ class Questions {
 // question.innerText = question0.q;
 // answer_1.innerText = question0.a1;
 // answer_2.innerText = question0.a2;
-
-    //QUESTION 1//
-// let question1 = new Questions("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?" 
-// ,"Caligula","Nero");
-
-// questionArray.push(question1);
-// console.log(question1.answer1);
-
-// question.innerText = question1.q;
-// answer_1.innerText = question1.a1;
-// answer_2.innerText = question1.a2;
-
-
-
-//create a function that when correct answer is clicked box turns green
-// https://codepen.io/jkohlin/pen/MQPBYJ?editors=0010 - help referenced 
-  answer_1.addEventListener("click",correct);
-
-  function correct(e){
-    e.currentTarget.style.backgroundColor = "green";
-    currentScore += 100;
-    console.log(currentScore)
-    console.log(playerScore)
-    playerScore.innerText = currentScore;
-    window.alert("You've made the Gods proud!");
-  }
-  //this.style.pointerEvents = "none";
-
-  answer_2.addEventListener("click",wrong);
-
-  function wrong(e) {
-      e.currentTarget.style.backgroundColor = "red";
-      window.alert("You've failed the Gods");
-      
-  }
-
-
 

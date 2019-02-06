@@ -1,25 +1,28 @@
 * {
     position: relative;
+    box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .html {
-    position:fixed;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top:0;
     bottom:0;
     left:0;
     right:0;
     font-family: sans-serif;
 }
-header {
-    text-align: center;
-    
-}
+
 
 h1  {
     display: flex;
     justify-content: center;
     padding: 10px;
+    text-align: center;
+    
 }
 
 .container {
@@ -30,21 +33,25 @@ h1  {
  
 }
 
-.question {
+.questions {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     text-align: center;  
-    border: 1px solid black;
-    border-radius: 5px;    
-    width: 400px;
+    border: 3px solid black;
+    padding: 1rem  2rem;
+    border-radius: 5px;  
+    width: fit-content;
 }
 
 /* https://css-tricks.com/the-shapes-of-css/ */
 .option1, .option2 {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     margin: 10%;  
-    border: 1px solid black;
+    border: 3px solid black;
     padding: 3rem  6rem;
     border-radius: 5px;
 }
