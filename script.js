@@ -1,7 +1,8 @@
 const question = document.querySelector('.question');
-const answer1 = document.querySelector('.option1');
-const answer2 = document.querySelector('.option2');
-const score = document.querySelector('.score');
+const answer_1 = document.querySelector('.option1');
+const answer_2 = document.querySelector('.option2');
+let playerScore = document.querySelector('.Score');
+let currentScore = 000;
 // ans1.innerText= "sup skank";
 // ans2.innerText ="it is dark in hur";
 // question.innerText = "here is ze question";
@@ -9,39 +10,56 @@ const score = document.querySelector('.score');
 questionArray = [];
 
 class Questions {
-    constructor(question,correct1,wrong2) {
+    constructor(question,answer1,answer2) {
         this.question = question;
-        this.correct1 = correct1;
-        this.wrong2 = wrong2;
+        this.answer1 = answer1;
+        this.answer2 = answer2;
     }
 }
 
+//QUESTIONS//
+    //QUESTION 0//
 let question0 = new Questions("Yes or no?","Yes","No"); 
-
 questionArray.push(question0);
-console.log(question0);
+console.log(question0.answer1);
 
-question.innerText = "yes or no?";
-answer1.innerText = "Yes";
-answer2.innerText = "No";
+question.innerText = question0.question;
+answer_1.innerText = question0.answer1;
+answer_2.innerText = question0.answer2;
+
+    //QUESTION 1//
+let question1 = new Questions("Which emperor attempted to make his horse, Incitatus, a consul. The highest elected office of the Roman Republic/Most important job in the government?","Caligula","Nero");
+
+questionArray.push(question1);
+console.log(question1.answer1);
+
+question.innerText = question1.question;
+answer_1.innerText = question1.answer1;
+answer_2.innerText = question1.answer2;
+
+
+
 
 //create a function that when correct answer is clicked box turns green
 // https://codepen.io/jkohlin/pen/MQPBYJ?editors=0010 - help referenced 
-  answer1.addEventListener("click",correct);
+  answer_1.addEventListener("click",correct);
 
   function correct(e){
     e.currentTarget.style.backgroundColor = "green";
-    alert("You've made the gods proud!");
-
+    currentScore += 100;
+    console.log(currentScore)
+    console.log(playerScore)
+    playerScore.innerText = currentScore;
+    window.alert("You've made the Gods proud!");
   }
 
-  answer2.addEventListener("click",wrong);
+  answer_2.addEventListener("click",wrong);
 
   function wrong(e) {
       e.currentTarget.style.backgroundColor = "red";
-      alert("You've failed");
+      window.alert("You've failed the Gods");
+      
   }
-    
 
 
 // one option is correct 
