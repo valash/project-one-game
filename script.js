@@ -1,53 +1,51 @@
-// what i need to have 
-// need to have an array with 5 questions and 5 answers
-// need to have same 5 questions with wrong answers
-// question 1 = correct answer wrong answer 
-// let questions =["","","","",""];
+const question = document.querySelector('.question');
+const answer1 = document.querySelector('.option1');
+const answer2 = document.querySelector('.option2');
+const score = document.querySelector('.score');
+// ans1.innerText= "sup skank";
+// ans2.innerText ="it is dark in hur";
+// question.innerText = "here is ze question";
 
-// let question1 = [
-//     correct1 = "text",
-//     wrong1 = "text"
-// ]
-// const gameSetup = function(evt) {
-    //puts question in the question box
-    //puts two answers in the option boxes
-// }
+questionArray = [];
 
-// question 2 = correct answer wrong answer 
-// let question2 = [
-//     correct2 = "text2",
-//     wrong2 = "text2"
-// ]
-// question 3 = correct answer wrong answer 
-// let question3 = [
-//     correct3 = "text3",
-//     wrong3 = "text3"
-// ]
-// question 4 = correct answer wrong answer 
-// let question4 = [
-//     correct4 = "text4",
-//     wrong4 = "text4"
-// ]
-// question 5 = correct answer wrong answer 
-//let question5 = [
-    // correct5 = "text5",
-    // wrong5 = "text5"
-//]
+class Questions {
+    constructor(question,correct1,wrong2) {
+        this.question = question;
+        this.correct1 = correct1;
+        this.wrong2 = wrong2;
+    }
+}
 
-// what needs to happen 
-// page loads 
-// has one question and 2 potential answers 
-//let playerScore = document.querySelector('.Score');
-//let currentScore = 000;
+let question0 = new Questions("Yes or no?","Yes","No"); 
 
-//const gameSetup = function(evt) {
-    //puts question in the question box
-    //puts two answers in the option boxes
-//}
+questionArray.push(question0);
+console.log(question0);
 
+question.innerText = "yes or no?";
+answer1.innerText = "Yes";
+answer2.innerText = "No";
+
+//create a function that when correct answer is clicked box turns green
+// https://codepen.io/jkohlin/pen/MQPBYJ?editors=0010 - help referenced 
+  answer1.addEventListener("click",correct);
+
+  function correct(e){
+    e.currentTarget.style.backgroundColor = "green";
+    alert("You've made the gods proud!");
+
+  }
+
+  answer2.addEventListener("click",wrong);
+
+  function wrong(e) {
+      e.currentTarget.style.backgroundColor = "red";
+      alert("You've failed");
+  }
+    
 
 
 // one option is correct 
+
 // when click on the correct answer turn the box green alert that you are correct 
 // score goes up 100 points 
 // loads next question
@@ -63,39 +61,3 @@
 // game 5
 //could i potentially have these load with the different info 
 
-const question = document.querySelector('.question');
-const answer1 = document.querySelector('.option1');
-const answer2 = document.querySelector('.option2');
-
-// ans1.innerText= "sup skank";
-// ans2.innerText ="it is dark in hur";
-// question.innerText = "here is ze question";
-
-questionArray = [];
-
-class Questions {
-    constructor(question,ans1,ans2) {
-        this.question = question;
-        this.ans1 = ans1;
-        this.ans2 = ans2;
-    
-    }
-}
-
-let question0 = new Questions("Yes or no?","Yes","No"); 
-
-
-questionArray.push(question0);
-console.log(question0);
-
-question.innerText = "yes or no?";
-answer1.innerText = "Yes";
-answer2.innerText = "No";
-
-
-
-//OR
-
-// var GetMyQuestion = questionArray[0];
-// var litString = GetMyQuestion.ans1;
-// console.log(litString);
