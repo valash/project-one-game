@@ -6,14 +6,14 @@ const option_2 = document.querySelector('.option2');
 let playerScore = document.querySelector('.Score');
 let currentScore = 000;
 
-// class Questions {
-//     constructor(question,choices,correctAnswer,wrongAnswer) {
-//         this.question = question;
-//         this.choices = choices;
-//         this.correctAnswer = correctAnswer;
-//         this.wrongAnswer = wrongAnswer;
-//     }
-// }
+class Questions {
+    constructor(question,choices,correctAnswer,wrongAnswer) {
+        this.question = question;
+        this.choices = choices;
+        this.correctAnswer = correctAnswer;
+        this.wrongAnswer = wrongAnswer;
+    }
+}
 
 //..............questions array .......
 var questionArray = [
@@ -66,13 +66,49 @@ let question2 = questionArray[2];
     option_2.innerText = questionArray[2].choices[1];
 console.log(question2);
 
-let question2 = questionArray[3];
+let question3 = questionArray[3];
     questions.innerText = questionArray[3].question;
     option_1.innerText = questionArray[3].choices[0];
     option_2.innerText = questionArray[3].choices[1];
 console.log(question3);
 
+let question4 = questionArray[4];
+    questions.innerText = questionArray[4].question;
+    option_1.innerText = questionArray[4].choices[0];
+    option_2.innerText = questionArray[4].choices[1];
+console.log(question4);
+
 //.............functions.............
+
+// nextQuestionButton.addEventListener('click','load', fillInputs);
+
+option_1.addEventListener('click',correctAns); 
+option_2.addEventListener('click', incorrectAns);
+
+function correctAns(e){
+    e.option_1 === questionArray.correctAnswer,
+        e.currentTarget.style.backgroundColor = "green",
+        currentScore += 100;
+        console.log(currentScore)
+        console.log(playerScore)
+        playerScore.innerText = currentScore;
+        alert("correct bish");
+    } 
+
+function incorrectAns(e) {
+    e.option_2 === questionArray.wrongAnswer,
+    e.currentTarget.style.backgroundColor = "red",
+    alert("You've failed the Gods");
+    } 
+
+
+// function fillInputs() {
+//     ('.questions').innerHTML = questionArray[0].question[0];
+//     ('.option_1').innerHTML = questionArray[0].choices[0];
+//     ('.option_2').innerHTML = questionArray[0].choices[1];
+//     console.log(fillInputs);
+// }
+
 //https://stackoverflow.com/questions/40606697/how-do-i-loop-back-to-the-prompt-if-answer-is-incorrect-javascript
 // guess();
 // function guess() {
@@ -98,8 +134,8 @@ console.log(question3);
 //     playerScore.innerText = currentScore;
 //     window.alert("You've made the Gods proud!");
 //    } else { (guessIsWrong) {
-//     e.currentTarget.style.backgroundColor = "red";
-//     window.alert("You've failed the Gods");
+    // e.currentTarget.style.backgroundColor = "red";
+    // window.alert("You've failed the Gods");
 //    }
 //   }
   
