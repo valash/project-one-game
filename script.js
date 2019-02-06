@@ -67,13 +67,13 @@ const question = document.querySelector('.question');
 const answer1 = document.querySelector('.option1');
 const answer2 = document.querySelector('.option2');
 
-// answer_op_1.innerText= "sup skank";
-// answer_op_2.innerText ="it is dark in hur";
+// ans1.innerText= "sup skank";
+// ans2.innerText ="it is dark in hur";
 // question.innerText = "here is ze question";
 
 questionArray = [];
 
-class questionSetup {
+class Questions {
     constructor(question,ans1,ans2) {
         this.question = question;
         this.ans1 = ans1;
@@ -82,10 +82,17 @@ class questionSetup {
     }
 }
 
-question0 = ("Yes or no?","Yes","No")
+let question0 = new Questions("Yes or no?","Yes","No"); 
+
 
 questionArray.push(question0);
 console.log(question0);
+
+question.innerText = "yes or no?";
+answer1.innerText = "Yes";
+answer2.innerText = "No";
+
+
 
 //OR
 
