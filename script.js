@@ -1,3 +1,10 @@
+const nextQuestion = document.querySelector('.nextQ');
+nextQuestion.addEventListener("click",next);
+function next(e) {
+    e.currentTarget.
+}
+
+
 const question = document.querySelector('.question');
 const answer_1 = document.querySelector('.option1');
 const answer_2 = document.querySelector('.option2');
@@ -6,6 +13,9 @@ let currentScore = 000;
 // ans1.innerText= "sup skank";
 // ans2.innerText ="it is dark in hur";
 // question.innerText = "here is ze question";
+
+
+
 
 questionArray = [];
 
@@ -28,7 +38,8 @@ answer_1.innerText = question0.answer1;
 answer_2.innerText = question0.answer2;
 
     //QUESTION 1//
-let question1 = new Questions("Which emperor attempted to make his horse, Incitatus, a consul. The highest elected office of the Roman Republic/Most important job in the government?","Caligula","Nero");
+let question1 = new Questions("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?" 
+,"Caligula","Nero");
 
 questionArray.push(question1);
 console.log(question1.answer1);
@@ -36,7 +47,6 @@ console.log(question1.answer1);
 question.innerText = question1.question;
 answer_1.innerText = question1.answer1;
 answer_2.innerText = question1.answer2;
-
 
 
 
@@ -52,6 +62,7 @@ answer_2.innerText = question1.answer2;
     playerScore.innerText = currentScore;
     window.alert("You've made the Gods proud!");
   }
+  //this.style.pointerEvents = "none";
 
   answer_2.addEventListener("click",wrong);
 
@@ -60,6 +71,8 @@ answer_2.innerText = question1.answer2;
       window.alert("You've failed the Gods");
       
   }
+
+
 
 
 // one option is correct 
