@@ -11,7 +11,6 @@ class Question {
     constructor(questionString,answerChoices,correctAnswerIndex){
         this.questionString= questionString;
         this.answerChoices= answerChoices;
-        // this.actualAnswer = actualAnswer;
         this.correctAnswerIndex = correctAnswerIndex;
 }
 }
