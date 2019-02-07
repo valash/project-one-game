@@ -3,19 +3,38 @@ const nextQuestionButton = document.querySelector('.nextQ');
 const questions = document.querySelector('.questions');
 const option_1 = document.querySelector('.option1');
 const option_2 = document.querySelector('.option2');
+const currentQuiz= undefined;
 let playerScore = document.querySelector('.Score');
 let currentScore = 000;
 
-class Questions {
-    constructor(question,choices,correctAnswer,wrongAnswer) {
-        this.question = question;
-        this.choices = choices;
-        this.correctAnswer = correctAnswer;
-        this.wrongAnswer = wrongAnswer;
+// class Questions {
+//     constructor(question,choices,correctAnswer,wrongAnswer) {
+//         this.question = question;
+//         this.choices = choices;
+//         this.correctAnswer = correctAnswer;
+//         this.wrongAnswer = wrongAnswer;
+//     }
+// }
+class Question {
+    constructor(questionString,answerChoices,actualAnswer){
+        this.questionString= questionString;
+        this.answerChoices= answerChoices;
+        this.actualAnswer = actualAnswer;
+}
+    isAnswerCorrect(selectedAnswer) {
+        if (selectedAnswer === this.actualAnswer) {
+            return true;
+        } else return false;
     }
 }
-
 //..............questions array .......
+const questionsArray = [
+    new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],"Caligula"),
+    new Question("Is the sky blue",["Yes","No"],"Yes"),
+    new Question("whaz my name",["Tony","VA"],"VA"),
+]
+
+
 var questionArray = [
     {
         question: "Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",
@@ -145,7 +164,9 @@ function incorrectAns(e) {
 //     })
 //  }
 
-
+function displayCurrentQuestion(e) {
+    const currentQuestion = 
+}
 
 
 
