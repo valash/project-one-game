@@ -1,11 +1,12 @@
 //...............variables.................
 const nextQuestionButton = document.querySelector('.nextQ');
-const questions = document.querySelector('.questions');
+const currentQuestion = document.querySelector('.questions');
 const option_1 = document.querySelector('.option1');
 const option_2 = document.querySelector('.option2');
 const currentQuiz= undefined;
 let playerScore = document.querySelector('.Score');
 let currentScore = 000;
+
 
 // class Questions {
 //     constructor(question,choices,correctAnswer,wrongAnswer) {
@@ -23,102 +24,86 @@ class Question {
 }
     isAnswerCorrect(selectedAnswer) {
         if (selectedAnswer === this.actualAnswer) {
-            return true;
-        } else return false;
+            return true,
+            selectedAnswer.currentTarget.style.backgroundColor = "green",
+            currentScore += 100,
+            console.log(currentScore)
+            console.log(playerScore)
+            playerScore.innerText = currentScore,
+            alert("correct bish");
+            } else return false,
+            alert("YOURE WRONG");
     }
 }
 //..............questions array .......
-const questionsArray = [
-    new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],"Caligula"),
-    new Question("Is the sky blue",["Yes","No"],"Yes"),
-    new Question("whaz my name",["Tony","VA"],"VA"),
-]
+// const questionsArray = [
+//     new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],"Caligula"),
+//     new Question("Is the sky blue",["Yes","No"],"Yes"),
+//     new Question("whaz my name",["Tony","VA"],"VA"),
+//     new Question("where am i from",["clarendon","texas"],"clarendon"),
+//     new Question("do i have a brother?",["No","Yes"],"Yes")
+// ]
+
+var question0 =  new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],"Caligula");
+
+    currentQuestion.innerText = question0.questionString;
+    option_1.innerText = question0.answerChoices[0];
+    option_2.innerText= question0.answerChoices[1];
 
 
-var questionArray = [
-    {
-        question: "Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",
-        choices: ["Caligula","Nero"],
-        correctAnswer: 0,
-        wrongAnswer: 1
-    },
-    {
-        question:"Is the sky blue",
-        choices: ["Yes","No"],
-        correctAnswer: 0,
-        wrongAnswer: 1
-    },
-    {
-        question:"whaz my name",
-        choices: ["Tony","VA"],
-        correctAnswer: 1,
-        wrongAnswer: 0
-    },
-    {
-        question:"where am i from",
-        choices: ["va","texas"],
-        correctAnswer: 0,
-        wrongAnswer: 1
-    },
-    {
-        question:"do i have a brother?",
-        choices: ["no","yes"],
-        correctAnswer: 1,
-        wrongAnswer: 0
-    },
-];
-let question0 = questionArray[0];
-    questions.innerText = questionArray[0].question;
-    option_1.innerText = questionArray[0].choices[0];
-    option_2.innerText = questionArray[0].choices[1];
-console.log(question0);
 
-let question1 = questionArray[1];
-    questions.innerText = questionArray[1].question;
-    option_1.innerText = questionArray[1].choices[0];
-    option_2.innerText = questionArray[1].choices[1];
-console.log(question1);
+// let question0 = questionArray[0];
+//     questions.innerText = questionArray.question[1];
+//     option_1.innerText = questionArray[0].choices[0];
+//     option_2.innerText = questionArray[0].choices[1];
+// console.log(question0);
 
-let question2 = questionArray[2];
-    questions.innerText = questionArray[2].question;
-    option_1.innerText = questionArray[2].choices[0];
-    option_2.innerText = questionArray[2].choices[1];
-console.log(question2);
+// let question1 = questionArray[1];
+//     questions.innerText = questionArray[1].question;
+//     option_1.innerText = questionArray[1].choices[0];
+//     option_2.innerText = questionArray[1].choices[1];
+// console.log(question1);
 
-let question3 = questionArray[3];
-    questions.innerText = questionArray[3].question;
-    option_1.innerText = questionArray[3].choices[0];
-    option_2.innerText = questionArray[3].choices[1];
-console.log(question3);
+// let question2 = questionArray[2];
+//     questions.innerText = questionArray[2].question;
+//     option_1.innerText = questionArray[2].choices[0];
+//     option_2.innerText = questionArray[2].choices[1];
+// console.log(question2);
 
-let question4 = questionArray[4];
-    questions.innerText = questionArray[4].question;
-    option_1.innerText = questionArray[4].choices[0];
-    option_2.innerText = questionArray[4].choices[1];
-console.log(question4);
+// let question3 = questionArray[3];
+//     questions.innerText = questionArray[3].question;
+//     option_1.innerText = questionArray[3].choices[0];
+//     option_2.innerText = questionArray[3].choices[1];
+// console.log(question3);
+
+// let question4 = questionArray[4];
+//     questions.innerText = questionArray[4].question;
+//     option_1.innerText = questionArray[4].choices[0];
+//     option_2.innerText = questionArray[4].choices[1];
+// console.log(question4);
 
 //.............functions.............
 
 // nextQuestionButton.addEventListener('click','load', fillInputs);
 
-option_1.addEventListener('click',correctAns); 
-option_2.addEventListener('click', incorrectAns);
+// option_1.addEventListener('click',correctAns); 
+// option_2.addEventListener('click', incorrectAns);
 
-function correctAns(e){
-    e.option_1 === questionArray.correctAnswer,
-        e.currentTarget.style.backgroundColor = "green",
-        currentScore += 100;
-        console.log(currentScore)
-        console.log(playerScore)
-        playerScore.innerText = currentScore;
-        alert("correct bish");
-    } 
+// function correctAns(e){
+//     e.option_1 === questionArray.correctAnswer,
+//         e.currentTarget.style.backgroundColor = "green",
+//         currentScore += 100;
+//         console.log(currentScore)
+//         console.log(playerScore)
+//         playerScore.innerText = currentScore;
+//         alert("correct bish");
+//     } 
 
-function incorrectAns(e) {
-    e.option_2 === questionArray.wrongAnswer,
-    e.currentTarget.style.backgroundColor = "red",
-    alert("You've failed the Gods");
-    } 
+// function incorrectAns(e) {
+//     e.option_2 === questionArray.wrongAnswer,
+//     e.currentTarget.style.backgroundColor = "red",
+//     alert("You've failed the Gods");
+//     } 
 
 
 // function fillInputs() {
@@ -164,10 +149,28 @@ function incorrectAns(e) {
 //     })
 //  }
 
-function displayCurrentQuestion(e) {
-    const currentQuestion = 
-}
-
+// function displayCurrentQuestion(e) {
+//     const currentQuestion = currentQuiz.getCurrentQuestion();
+//     document.querySelector(".questions").innerText =currentQuestion.questionString;
+//     questionNumber.innerText = `Question ${currentQuiz.questionNum + 1}`;
+//     let answerList = document.createElement("li");
+//     let replacedItem = document.createElement("ul");
+//     for (let i = 0; i < currentQuestion.answerChoices.length; i++) {
+//         const answerItem = currentQuestion.answerChoices[i].split("").join("").replace(",","").replace(":"," ").replace("."," ").replace("'","").replace("/"," ").toLowerCase();
+//         let indexOfDash =replaceItem.indexOf('-')
+//         if (indexOfDash >= 0) {
+//             replacedItem = replacedItem.substring(0,indexOfDash);
+//         }
+        
+//     }
+// nextQuestionButton.addEventListener('click',function (e) {
+//     currentQuiz.moveToNextQuestion();
+//     const finished = currentQuiz.isQuizFinished();
+//     if (finished) {
+//         main.innerText = `<h1>You're Finished!<h1>`
+//     }
+// }
+// )
 
 
   //.............. events.............
@@ -175,9 +178,9 @@ function displayCurrentQuestion(e) {
 
 
 // window.addEventListener('load', function() {
-//     questions.innerText = questionArray[0].question;
-//     option_1.innerText = questionArray[0].choices[0];
-//     option_2.innerText = questionArray[0].choices[1];
+//     questions.innerText = questionArray.question;
+//     option_1.innerText = questionArray.answerChoices[0];
+//     option_2.innerText = questionArray.answerChoices[1];
 // });
 
 //QUESTIONS//
@@ -188,5 +191,4 @@ function displayCurrentQuestion(e) {
 
 // question.innerText = question0.q;
 // answer_1.innerText = question0.a1;
-// answer_2.innerText = question0.a2;
-
+// answer_2.innerText = question0.a2.
