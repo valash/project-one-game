@@ -3,7 +3,6 @@ const nextQuestionButton = document.querySelector('.nextQ');
 const currentQuestion = document.querySelector('.questions');
 const option_1 = document.querySelector('.option1');
 const option_2 = document.querySelector('.option2');
-const currentQuiz= undefined;
 let playerScore = document.querySelector('.Score');
 let currentScore = 000;
 
@@ -13,7 +12,7 @@ class Question {
         this.questionString= questionString;
         this.answerChoices= answerChoices;
         // this.actualAnswer = actualAnswer;
-        this.correctAnswerIndex = 0;
+        this.correctAnswerIndex = correctAnswerIndex;
 }
 }
 //..............questions array .......
@@ -27,26 +26,48 @@ const questionsArray = [
 
 let questionIndex = 0;
 
-nextQuestionButton.addEventListener('click', function () {
-    questionIndex += 1;
-    let newQuestion = questionsArray[questionIndex];
-    currentQuestion.innerHTML = " ";
-    option_1.style.backgroundColor = "white";
-    option_2.style.backgroundColor ="white";
-    currentQuestion.innerHTML = newQuestion;
-    currentQuestion.innerText = newQuestion.questionString;
-    option_1.innerText = newQuestion.answerChoices;
-    option_2.innerText= newQuestion.answerChoices;
-    
-})
+let newQuestion = questionsArray[questionIndex];
+currentQuestion.innerHTML = newQuestion;
+currentQuestion.innerText = newQuestion.questionString;
+option_1.innerText = newQuestion.answerChoices[0];
+option_2.innerText= newQuestion.answerChoices[1]
+
+nextQuestionButton.addEventListener('click', function() {
+    if (questionIndex < questionsArray.length) {
+        questionIndex += 1;
+        let newQuestion = questionsArray[questionIndex];
+        currentQuestion.innerHTML = " ";
+        option_1.style.backgroundColor = "white";
+        option_2.style.backgroundColor ="white";
+        currentQuestion.innerHTML = newQuestion;
+        currentQuestion.innerText = newQuestion.questionString;
+        option_1.innerText = newQuestion.answerChoices[0];
+        option_2.innerText= newQuestion.answerChoices[1];
+    } else {
+        console.log("game over");
+        alert(currentScore);
+        //clear page
+// dont increaseinndex, maybe say game over
+    }});
+
+    // console.log("game over");
+    // alert(currentScore);
+    //     if (currentScore = 500) {
+    //         alert("GREAT JOB!");
+    //     }
+    //     else (currentScore > 400) {
+    //         alert("youre terrible");
+    //     }
+
+
 
 var question0 =  new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"], 0);
 
 
 // instead of question0,we can have currentQuestion that uses the array and an index placeholder to determine one question at a time 
 
-    option_1.setAttribute('data-index', 0)
-    option_2.setAttribute('data-index', 1)
+    option_1.setAttribute('data-index', 0);
+    option_2.setAttribute('data-index', 1);
 
 
     const optionsParent = document.querySelector('.options')
@@ -55,18 +76,23 @@ var question0 =  new Question("Which emperor attempted to make his horse, Incita
         const target= evt.target
         
         const optionIndex = Number(target.getAttribute('data-index'))
-        
-        if (question0.correctAnswerIndex === optionIndex) {
-            console.log('that is the correct answer!!!!')
-            target.style.backgroundColor ='green'
-            currentScore += 100,
-            console.log(currentScore)
-            console.log(playerScore)
-            playerScore.innerText = currentScore
-        } else {
-            console.log('sorry, that is incorrect')
-            target.style.backgroundColor ='red'
+
+        console.log(questionsArray[questionIndex])
+
+        if (target.classList.contains('option')) {
+            if (questionsArray[questionIndex].correctAnswerIndex === optionIndex) {
+                console.log('that is the correct answer!!!!')
+                target.style.backgroundColor ='green'
+                currentScore += 100,
+                console.log(currentScore)
+                console.log(playerScore)
+                playerScore.innerText = currentScore
+            } else {
+                console.log('sorry, that is incorrect')
+                target.style.backgroundColor ='red'
+            }
         }
+        
 
     })
 
