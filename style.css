@@ -2,6 +2,7 @@
     position: relative;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
 }
 
 .html {
@@ -30,7 +31,8 @@ h1  {
     justify-content:center;
     text-align: center;
     text-decoration: none;  
- 
+    
+
 }
 
 .questions {
