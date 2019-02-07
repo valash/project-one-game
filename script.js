@@ -17,10 +17,11 @@ let currentScore = 000;
 //     }
 // }
 class Question {
-    constructor(questionString,answerChoices,actualAnswer){
+    constructor(questionString,answerChoices, correctAnswerIndex){
         this.questionString= questionString;
         this.answerChoices= answerChoices;
-        this.actualAnswer = actualAnswer;
+        // this.actualAnswer = actualAnswer;
+        this.correctAnswerIndex = 0;
 }
     isAnswerCorrect(selectedAnswer) {
         if (selectedAnswer === this.actualAnswer) {
@@ -36,21 +37,50 @@ class Question {
     }
 }
 //..............questions array .......
-// const questionsArray = [
-//     new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],"Caligula"),
-//     new Question("Is the sky blue",["Yes","No"],"Yes"),
-//     new Question("whaz my name",["Tony","VA"],"VA"),
-//     new Question("where am i from",["clarendon","texas"],"clarendon"),
-//     new Question("do i have a brother?",["No","Yes"],"Yes")
-// ]
+const questionsArray = [
+    new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],0),
+    new Question("Is the sky blue",["Yes","No"],0,),
+    new Question("whaz my name",["Tony","VA"],1),
+    new Question("where am i from",["clarendon","texas"],0),
+    new Question("do i have a brother?",["No","Yes"],1)
+]
 
-var question0 =  new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],"Caligula");
+// var question0 =  new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],"Caligula");
+
+var question0 =  new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"], 0);
+
+// instead of question0,we can have currentQuestion that uses the array and an index placeholder to determine one question at a time 
 
     currentQuestion.innerText = question0.questionString;
     option_1.innerText = question0.answerChoices[0];
     option_2.innerText= question0.answerChoices[1];
 
+    option_1.setAttribute('data-index', 0)
+    option_2.setAttribute('data-index', 1)
 
+
+    const optionsParent = document.querySelector('.options')
+    optionsParent.addEventListener('click', function(evt) {
+        const target= evt.target
+        
+        const optionIndex = Number(target.getAttribute('data-index'))
+        
+        // console.log(question0.correctAnswerIndex)
+        // console.log(optionIndex)
+
+        if (question0.correctAnswerIndex === optionIndex) {
+            console.log('that is the correct answer!!!!')
+            target.style.backgroundColor ='green'
+            currentScore += 100,
+            console.log(currentScore)
+            console.log(playerScore)
+            playerScore.innerText = currentScore
+        } else {
+            console.log('sorry, that is incorrect')
+            target.style.backgroundColor ='red'
+        }
+
+    })
 
 // let question0 = questionArray[0];
 //     questions.innerText = questionArray.question[1];
@@ -143,11 +173,11 @@ var question0 =  new Question("Which emperor attempted to make his horse, Incita
 //    }
 //   }
   
-//  function nextQuestion(){
-//     nextQ.addEventListener('click',function(load) {
-//         console.log("this loaded");
-//     })
-//  }
+ function nextQuestion(){
+    nextQuestionButton.addEventListener('click',function() {
+        console.log("this loaded");
+    })
+ }
 
 // function displayCurrentQuestion(e) {
 //     const currentQuestion = currentQuiz.getCurrentQuestion();
