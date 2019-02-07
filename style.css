@@ -1,146 +1,32 @@
-
-body {
-    display: flex;
-    flex-direction: column;
+.question {
+    grid-area: questions;
+    grid-column: 1 /span 1;
+    grid-row: 1 / span 1;
+    background-color: aliceblue;   
+}
+.options {
+    grid-area: answers;
+    grid-column: 2 /span 2;
+    grid-row: 1 / span 2;
+    background-color: aquamarine;
     
+}
+.container {
+    background-color: blueviolet;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 150px;
+    grid-template-areas: 
+        "questions answers"
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
 }
 
 header {
- background-color: red;
- justify-content: center;
- text-align: center;
-      
-}
-
-
-.container {
-    background-color: aqua; 
-    display:flex; 
+    display: flex;
     justify-content: center;
-    
 }
-
-.questions {
-    background-color: violet;
-    height: 220px;
-    width: 200px;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.option1 {
-    background-color: yellow;
-    height: 100px;
-    width: 200px;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid black;
-}
-
-.option2 {
-    background-color: darkseagreen;
-    height: 100px;
-    width: 200px;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid black;
-}
-
-footer{
-    border: 1px solid black;
-    display:flex;
-    justify-content: center;
-    justify-content: space-between;
-    justify-content: space-evenly;
-
-}
-
-.Score {
-    background-color:darkcyan;
-    display: flex;
-}
-
-.nextQ {
-    background-color: indianred;
-    display: flex;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-
-footer {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 1%;
-
-}
-
-.questions {
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    border: 1px solid black
-}
-
- .option1, .option2 {
-  display: grid;
-  grid-gap: 1em;
-  margin: 0 auto;
-  max-width: 56em;
-  padding: 1em 0;
-  border: 1px solid black;
-  
-}
-
-header,footer {
-  grid-column: 3 / span 3;
-  background: #eaeaea;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: space-around;
-  border: 1px solid black;
-  position: relative; 
-}
-.score,.nextQ {
-    grid-column: 1 / span 1;
-    background: #eaeaea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: space-around;
-    border: 1px solid black;
-    border-radius: 5px;
-    position: relative; 
-  }
-
-.grid {
-    display: grid;
-    grid-template-columns: 150px auto 150px;
-    grid-template-rows: repeat(3, 100px);
-    grid-gap: 1em;
-  }
-  
-
-  
-  
  
- 
-  
- */
