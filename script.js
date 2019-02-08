@@ -23,7 +23,9 @@ const questionsArray = [
     new Question("Emperor Nero played what instrument while watching Rome burn?",["Bugle","Lyre"],1)
 ]
 
+// which emperor claimed to kill more gauls than existed at the time - ceaser 
 
+// i am sparticus 
 
 
 let questionIndex = 0;
@@ -42,8 +44,6 @@ nextQuestionButton.addEventListener('click', function() {
     if (questionIndex < questionsArray.length) {
         let newQuestion = questionsArray[questionIndex];
         currentQuestion.innerHTML = " ";
-        option_1.style.backgroundColor = "white";
-        option_2.style.backgroundColor ="white";
         currentQuestion.innerHTML = newQuestion;
         currentQuestion.innerText = newQuestion.questionString;
         option_1.innerText = newQuestion.answerChoices[0];
