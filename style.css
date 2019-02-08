@@ -1,43 +1,85 @@
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+}
+
+main {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 10%;
+
+}
+
 .div-container {
+    display:flex;
     background-image: url("/Users/Virginia/wdi/projects/project-one-game/imgs/soc1.jpg");
     background-size: cover;
-    display: grid;
+    background-repeat: no-repeat;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(130px, auto);
     grid-template-areas: 
       "hd hd hd"
       "sd sd main"
       "ft ft ft";
+      grid-gap: 15px; */
 }
 
 .questions {
-    display:grid;
+    display: flex;
+    flex-direction: row;
+    /* display:grid;
     grid-area: sd;
     grid-column: 1 / span 2;  
-    grid-row: 2 / 3;
+    grid-row: 2 / 3; */
     border: 1px solid black;
     border-radius: 25px;
     text-align: center;
-    padding: 20px;
-    
+    padding: 30px;
+    /* grid-column-gap:10px; */
+    background-color: aliceblue;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
 .options  {
-    grid-area: main;
+    display: flex;
+    flex-direction: row;
+    /* grid-area: main; */
     flex-direction: column;
     align-items: flex-end;
+    
 
 }
+.questions:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.options:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.option1, .option2 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    text-transform: uppercase;
+    background-color: aliceblue;
+}
+
 .option1 {
-    
     border: 1px solid black;
     border-radius: 25px;
     text-align: center;
     padding: 20px;
 }
 
+
 .option2 {
-    
     border: 1px solid black;
     border-radius: 25px;
     text-align: center;
@@ -48,11 +90,35 @@ footer {
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-transform: uppercase;
+    justify-content: space-evenly;
+    height: 10%;
+    padding: 10px;
+}
+footer:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 header {
     display: flex;
     justify-content: center;
     border: 1px solid black;
+    text-shadow: 0 1px 0 black;
+    color: grey;
+    height: 10%;
+    font-family: 'Marcellus', serif;
+    text-transform: uppercase;
+}
+
+.nextQ {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 30px;
 }
  
+.Score {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 30px;
+}
