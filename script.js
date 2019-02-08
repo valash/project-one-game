@@ -17,11 +17,14 @@ class Question {
 //..............questions array .......
 const questionsArray = [
     new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"],0),
-    new Question("Is the sky blue",["Yes","No"],0),
-    new Question("whaz my name",["Tony","VA"],1),
-    new Question("where am i from",["clarendon","texas"],0),
-    new Question("do i have a brother?",["No","Yes"],1)
+    new Question("What substance did ancient Roman woman rub on their skin to stay lookin' fresh?",["Dead skin cells from Gladiators","Goat Poop"],0),
+    new Question("What was the max amount of times a father could sell their sons into slavery?",["Two Times","Three Times"],1),
+    new Question("'Emperor Heliogabalus loved collecting what items by the ton?",["Cobwebs","Chicken feathers"],0),
+    new Question("Emperor Nero played what instrument while watching Rome burn?",["Bugle","Lyre"],1)
 ]
+
+
+
 
 let questionIndex = 0;
 
