@@ -17,8 +17,8 @@ main {
 
 .div-container {
     display:flex;
-    min-height:100vh;
-    background-image: url("/Users/Virginia/wdi/projects/project-one-game/imgs/fullbk.jpg");
+    min-height:75vh;
+    background-image: url("/Users/Virginia/wdi/projects/project-one-game/imgs/soc1.jpg");
     background-size: cover;
     background-repeat: round;
     align-items: center;
