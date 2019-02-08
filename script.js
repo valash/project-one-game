@@ -29,11 +29,14 @@ let newQuestion = questionsArray[questionIndex];
 currentQuestion.innerHTML = newQuestion;
 currentQuestion.innerText = newQuestion.questionString;
 option_1.innerText = newQuestion.answerChoices[0];
-option_2.innerText= newQuestion.answerChoices[1]
+option_2.innerText= newQuestion.answerChoices[1];
+
 
 nextQuestionButton.addEventListener('click', function() {
+    console.log(questionsArray.length)
+    console.log(questionIndex)
+    questionIndex += 1;
     if (questionIndex < questionsArray.length) {
-        questionIndex += 1;
         let newQuestion = questionsArray[questionIndex];
         currentQuestion.innerHTML = " ";
         option_1.style.backgroundColor = "white";
@@ -43,27 +46,32 @@ nextQuestionButton.addEventListener('click', function() {
         option_1.innerText = newQuestion.answerChoices[0];
         option_2.innerText= newQuestion.answerChoices[1];
     } else {
-        console.log("game over");
-        alert(currentScore);
-        //clear page
-// dont increaseinndex, maybe say game over
-    }});
+        // document.querySelector('.results').style.display = 'unset';
+        document.querySelector('.gameboard').style.display = 'none';
+        if (currentScore == 500) {
+            document.querySelector('.results').innerText = "ZEUS WOULD BE PROUD!";
+        } else if (currentScore == 400) {
+            document.querySelector('.results').innerText = "THE EMPEROR IS IMPRESSED";
+        } else if (currentScore == 300) {
+            document.querySelector('.results').innerText = "CESAR FROWNS AT YOU";
+        }else if (currentScore == 200) {
+            document.querySelector('.results').innerText = "CESAR FROWNS AT YOU";
+        }
+        else if (currentScore == 100) {
+            document.querySelector('.results').innerText = "CESAR FROWNS AT YOU";
+        }  else if (currentScore == 000) {
+            document.querySelector('.results').innerText = "YOU'RE LITERALLY SO BAD";
+        } 
+        document.querySelector('.results').style.visibility = "visible";
+     }
 
-    // console.log("game over");
-    // alert(currentScore);
-    //     if (currentScore = 500) {
-    //         alert("GREAT JOB!");
-    //     }
-    //     else (currentScore > 400) {
-    //         alert("youre terrible");
-    //     }
+    });
 
 
 
 var question0 =  new Question("Which emperor attempted to make his horse, Incitatus, a Consul (the highest elected office of the Roman Republic)?",["Caligula","Nero"], 0);
 
 
-// instead of question0,we can have currentQuestion that uses the array and an index placeholder to determine one question at a time 
 
     option_1.setAttribute('data-index', 0);
     option_2.setAttribute('data-index', 1);

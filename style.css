@@ -11,36 +11,27 @@ main {
     display: flex;
     flex-direction: row;
     margin: 10%;
-
+    width: 100vw;
+    justify-content: space-between;
 }
 
 .div-container {
     display:flex;
-    background-image: url("/Users/Virginia/wdi/projects/project-one-game/imgs/soc1.jpg");
+    min-height:80vh;
+    background-image: url("/Users/Virginia/wdi/projects/project-one-game/imgs/fullbk.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(130px, auto);
-    grid-template-areas: 
-      "hd hd hd"
-      "sd sd main"
-      "ft ft ft";
-      grid-gap: 15px; */
+    background-repeat: round;
+    align-items: center;
 }
 
 .questions {
     display: flex;
+    min-width: 50%;
     flex-direction: row;
-    /* display:grid;
-    grid-area: sd;
-    grid-column: 1 / span 2;  
-    grid-row: 2 / 3; */
     border: 1px solid black;
     border-radius: 25px;
     text-align: center;
     padding: 30px;
-    /* grid-column-gap:10px; */
     background-color: aliceblue;
     text-transform: uppercase;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -49,42 +40,51 @@ main {
 
 .options  {
     display: flex;
-    flex-direction: row;
-    /* grid-area: main; */
     flex-direction: column;
     align-items: flex-end;
-    
+    margin: 20px;
+    min-width: 50%;
 
 }
 .questions:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.options:hover {
+.option:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+/* .option2:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+} */
 
-.option1, .option2 {
+.option {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     text-transform: uppercase;
     background-color: aliceblue;
-}
-
-.option1 {
+    width: 65%;
+    margin: 10px 0;
     border: 1px solid black;
     border-radius: 25px;
     text-align: center;
     padding: 20px;
 }
 
-
-.option2 {
+.results {
+    display: flex;
+    visibility: hidden;
     border: 1px solid black;
+    justify-content: center;
     border-radius: 25px;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    background-color: aliceblue;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: auto;
 }
+
 
 footer {
     display: flex;
